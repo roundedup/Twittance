@@ -100,10 +100,6 @@ def compute():
     
     # find best ad from opposite side
     sample_ad_text, sample_ad_author = best_ad(best_vec, score)
-    
-    if screen_name == 'leodicaprio' and topic == 'Climate change':
-        sample_ad_text = "Predicting climate temperatures isn't science - it's science fiction."
-        sample_ad_author = 'PragerU'
         
     return jsonify(result=score, prediction = stance, sample_tweet = sample_text, handle=handle_out, ref= sample_href, topic = topic, sample_pr = sample_ad_text, advertiser = sample_ad_author)
     
