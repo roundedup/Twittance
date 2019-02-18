@@ -1,0 +1,60 @@
+.header > p > a {
+    font-size: 66pt;
+    color: #292f33;
+    text-decoration: none;
+
+}
+
+.headersmall > p > a {
+    font-size: 14pt;
+    color: #292f33;
+    text-decoration: none;
+
+}
+
+.black-bg {
+    background-color: #fff;
+}
+
+.black-bg:after {
+    opacity: 0.3;
+}
+
+#background {
+    background-image:url('../static/img/bkg.jpg');
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+    filter:alpha(opacity=80);
+}
+
+#get-tilt-form {
+  text-align: center;
+}
+
+
+#handle-input-button {
+    background-color: #ff6900;
+    outline: none;
+}
+
+#handle {
+  width: 100%;
+}
+
+#explanation-text {
+    color: #292f33;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: italic;
+}
+
+#tweet-text {
+    color: #999;
+    font-size: 28pt;
+    text-align: center;
+}
+
+#explanation-text > p > a {
+    color: #292f33;
+    font-size: 24pt;
+}

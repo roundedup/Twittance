@@ -1,0 +1,189 @@
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+
+
+
+@font-face {
+  font-family: 'Arista';
+  src: url('../fonts/arista.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AristaLight';
+  src: url('../fonts/arista_light.ttf') format('truetype');
+}
+
+#gauge text:nth-child(7) tspan {
+  font-size: 0.001em !important;
+}
+
+footer {
+    text-align: right;
+}
+
+#background {
+    background-image:url('../static/img/bkg.jpg');
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+    filter:alpha(opacity=80);
+}
+
+
+blockquote {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    margin: 3em auto !important;
+    padding: 0.75em 20px;
+    line-height: 1.45;
+    position: relative;
+    width: 420px;
+    height:120px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc;
+    display:table;
+    text-align: left;
+}
+
+
+
+
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+
+.blocktweet{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    margin: 3em auto !important;
+    padding: 0.75em 60px;
+    line-height: 1.45;
+    position: relative;
+    width: 420px;
+    height:140px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc;
+    display:table;
+}
+
+
+.blockpr{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    margin: 3em auto !important;
+    padding: 0.75em 60px;
+    line-height: 1.45;
+    position: relative;
+    width: 420px;
+    height:140px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc;
+    display:table;
+}
+
+.blocktweet:before{
+    position: absolute;
+    line-height: 1;
+    top: -20px;
+    left: -25px;
+content:url('../img/bird.png');
+transform: scale(.3);
+}
+
+.blocktweet footer{
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+
+.blockpr:before{
+    position: absolute;
+    line-height: 1;
+    top: -28px;
+    left: -20px;
+content:url('../img/pr.png');
+transform: scale(.3);
+}
+
+.blockpr footer{
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+
+.title-font {
+    font-family: 'Arista';
+}
+
+
+.title-font-light {
+    font-family: 'AristaLight';
+}
+
+.other-font {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: italic;
+}
+
+#get-handle-form {
+  text-align: center;
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.btn-info, .btn-info:active, .btn-info:visited {
+    background-color: #00aced !important;
+    border-color: #1dcaff !important;
+}
+
+.btn-info:hover{
+    background-color: #1dcaff !important;
+    border-color:  #1dcaff !important;
+}
+
+
+
+.tweetcontainer {
+		width: 420px;
+        height: 450px;
+        margin: auto auto auto auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+.gaugecontainer {
+		width: 500px;
+        height: 450px;
+        margin: auto auto auto auto;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 70px;
+    }
+    
+
+.gauge {
+    width: 90%;
+    height:300px;
+    margin: auto;
+    }
+
+
+
+

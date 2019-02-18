@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Twittance</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+        
+    </head>
+    <body background="/static/img/bkg.jpg">
+    
+    
+        <div id="header" class="header clear-fix">
+            <p class="text-center">
+                <a href="{{ host }} " class="title-font" style="color: #00aced;">Twittance</a></p>
+        </div>
+             <div id="headersmall" class="headersmall clear-fix">
+              <p class="text-center">
+                <a  class="title-font-light" >Targeted advertisement based on detection of political stances.</a> 
+                </p>
+                 <p class="text-center">
+                <a  class="title-font-light" >Just enter a Twitter handle and a topic!</a> 
+                </p>
+                <p class="text-center">
+                <a  class="title-font-light" >The algorithm will suggest an ad from the opposite side.</a> 
+                </p>
+                <br>
+        </div>
+
+</style>
+
+
+        <div id="get-handle-form"  >
+			<form class="form-inline" >	
+				<div class="form-group form-group-lg">
+					<input id="handle_text" type="text" class="form-control form-control-lg" name="s_handle" placeholder="@LeoDiCaprio"></input>
+
+					<select id="topic_text" class="form-control" name="s_topic" placeholder="Immmigration">
+      <option>Immigration</option>
+      <option>Healthcare</option>
+      <option>Abortion</option>
+      <option>Climate change</option>
+    </select>
+				</div>
+					  <button href="#" onclick="myFunction()" id=calculate type="submit" class="btn btn-info btn-lg">Analyze</button>
+		</form>	
+	</div>
+</div>	
+        
+
+<div id = 'wrapper' style = 'text-align: center;' >
+
+<div class="gaugecontainer">
+        <div id="gauge" class="gauge"></div>
+</div> 
+
+
+<div class="tweetcontainer"> 
+
+<blockquote lang="en" class='blocktweet'>
+<p id='tweet-block' >A tweet on the topic will be selected and shown here
+
+</p>
+  <footer id='tweet-footer'> <a style="font-size: 16px" href=''>  </a> </footer>
+</blockquote>
+
+
+<blockquote lang="en" class='blockpr'>
+<p id='pr-block' > An ad from the other side will appear in this box
+</p>
+</blockquote>
+</div>
+
+</div>
+ 					    
+
+<script src="../static/js/jquery-1.11.1.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+
+<script src="../static/js/raphael-2.1.4.min.js"></script>
+<script src="../static/js/justgage.js"></script>
+
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+
+<script type='text/javascript'>
+
+  $(function() {
+    $('button#calculate').bind('click', function() {
+    g.txtTitle.attr({"text": 'Analyzing...'})
+      $.getJSON($SCRIPT_ROOT + '/_compute', {
+        s_handle: $('input[name="s_handle"]').val(),
+        s_topic: $('select[name="s_topic"]').val()}
+        , function(data) {
+	   g.refresh(data.result);
+	   g.txtTitle.attr({"text": data.prediction });
+	   document.getElementById('tweet-block').innerHTML = data.sample_tweet;	   
+	   document.getElementById('tweet-footer').innerHTML = data.ref;
+	   document.getElementById('pr-block').innerHTML = data.sample_pr;	  
+	   document.getElementById('handle_text').value='';
+	   document.getElementById('handle_text').placeholder = data.handle;
+      });
+      return false;
+    });
+
+  });
+
+
+var g;
+  var g = new JustGage({
+            id: "gauge",
+            title: "Liberal or Conservative?",
+            value: 0,
+            min: -100,
+            max: 100,
+            titleFontFamily: "AristaLight",
+            titleFontColor: "#00aced",
+            valueFontSize:1,
+            decimals: 0,
+            hideMinMax: true,
+            gaugeWidthScale: 0.7,
+            pointer: true,
+            counter: false,
+  });   
+</script>
+
+
+
+        <hr>
+        <div class="other-font">
+            <p class="medium text-center">If you want to know more about it please visit my GitHub <a href='https://github.com/roundedup/Twittance'>  repo</a> for all the details.</p>
+            <p id="riot-disclaimer" class="small text-center">
+                <small>
+                    <em> Twitter is a trademark of Twitter Inc. This site is not part of the Twitter website or Twitter Inc. </em> <br>
+                    <em> This site is not endorsed by Twitter in any way and does not reflect the views or opinions of Twitter.</em>
+                </small>
+            </p>
+        </div>
+    
+
+    </body>
+    <script type="text/javascript">
+        $HOST = "{{ host }}";
+    </script>
+</html>
