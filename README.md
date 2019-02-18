@@ -1,6 +1,10 @@
 # Twittance
+## From Twitter utterance to political stance
 
-[Twittance](http://www.twittance.com) is a webapp that predicts political orientation of 
-Twitter accounts on a given topic and suggests targeted advertisement. It uses two different vectorizations of tweets, one based on word2vec, 
+[Twittance](http://www.twittance.com) 
+
+is a tool that predicts whether a Twitter user has liberal or conservative views on a given
+topic. It then suggests relevant ads based on the prediction. 
+It uses two different vectorizations of tweets, one based on a custom word2vec, 
 one on tf-idf. It was trained on a large dataset of tweets by politicians. 
-Deployed through Flask, soon to be hosted on AWS. 
+Deployed through Flask, currently hosted on AWS. 
